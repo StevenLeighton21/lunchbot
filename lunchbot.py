@@ -11,4 +11,4 @@ employees = [
 
 # this will return who is going to lunch!
 def who_is_going_to_lunch():
-    return 'FIXME'
+    return jsonify(employees)
