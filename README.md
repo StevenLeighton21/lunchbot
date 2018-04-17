@@ -2,8 +2,7 @@
 
 1. Install python3 `brew install python`
 2. Install pip `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py ; python get-pip.py`
-3. Install dependancies `pip install -r requirements.txt`
-
+3. Run `make setup_env` to configure your virtual env
 
 ## Usage
 
