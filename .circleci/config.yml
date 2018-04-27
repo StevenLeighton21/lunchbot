@@ -53,3 +53,17 @@ jobs:
       - store_artifacts:
           path: test-reports
           destination: test-reports
+
+  deploy:
+    requires:
+      - build
+    branch: master
+    heroku:
+      appname: lunchbot-python-learning
+
+  workflows:
+  version: 2
+  build-test-and-deploy:
+    jobs:
+      - build
+      - deploy
