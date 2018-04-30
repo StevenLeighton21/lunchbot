@@ -54,16 +54,16 @@ jobs:
           path: test-reports
           destination: test-reports
 
-  deployment:
-    requires:
-      - build
-    branch: infra
-    heroku:
-      appname: lunchbot-python-learning
-
-  workflows:
-  version: 2
-  build-test-and-deploy:
-    jobs:
-      - build
-      - deployment
+  # deployment:
+  #   requires:
+  #     - build
+  #   branch: infra
+  #   heroku:
+  #     appname: lunchbot-python-learning
+  #
+  # workflows:
+  # version: 2
+  # build-test-and-deploy:
+  #   jobs:
+  #     - build
+  #     - deployment
