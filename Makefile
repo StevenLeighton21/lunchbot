@@ -4,7 +4,7 @@ setup_env:
 	pip install -r requirements.txt
 
 dev:
-	export FLASK_APP=main.py ; python main.py
+	heroku local
 
 spec:
 	python -m pytest -vv

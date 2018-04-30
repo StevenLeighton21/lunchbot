@@ -48,9 +48,22 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            python manage.py test
+            python -m pytest -vv
 
       - store_artifacts:
           path: test-reports
           destination: test-reports
-          
+
+  # deployment:
+  #   requires:
+  #     - build
+  #   branch: infra
+  #   heroku:
+  #     appname: lunchbot-python-learning
+  #
+  # workflows:
+  # version: 2
+  # build-test-and-deploy:
+  #   jobs:
+  #     - build
+  #     - deployment
