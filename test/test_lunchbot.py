@@ -11,3 +11,8 @@ class TestLunchbot(object):
 
         res2 = client.get(url_for('lunch'))
         assert res != res2
+
+    def test_request_requires_valid_token(self, client):
+        res = client.get(url_for('lunch'))
+        assert res.status_code == 503
+        # assert res.json == 'Access denied'
