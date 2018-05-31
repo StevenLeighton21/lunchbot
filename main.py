@@ -1,7 +1,8 @@
-from flask import Flask, request, Response
+import os
+from flask import Flask, request, Response, jsonify
 from lunchbot import who_is_going_to_lunch
-from private.config import SLACK_LUNCHBOT_SECRET
 
+SLACK_LUNCHBOT_SECRET = os.environ.get('SLACK_LUNCHBOT_SECRET')
 
 def create_lunchbot():
     app = Flask(__name__)
@@ -16,7 +17,11 @@ def create_lunchbot():
 
             return who_is_going_to_lunch()
         else:
-            return Response(status=503)
+            return app.response_class(
+                response=jsonify('Access Denied'),
+                status=503,
+                mimetype='application/json'
+            )
     return app
 
 lunchbot = create_lunchbot()
