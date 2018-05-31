@@ -8,3 +8,4 @@ py==1.5.3
 pytest==3.2.2
 pytest-flask==0.10.0
 Werkzeug==0.14.1
+flask-mysql
